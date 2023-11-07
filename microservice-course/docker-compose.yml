@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: 'coursesDb'
+      POSTGRES_USER: 'postgres'  # Usualmente el usuario predeterminado es 'postgres', asegúrate de que 'postgre' es correcto.
+      POSTGRES_PASSWORD: 150919
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
